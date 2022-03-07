@@ -22,8 +22,8 @@ if __name__ == '__main__':
         choice = int(input("Please enter choice 1-10: "))
         clear()
         cook.grab_food_ingredients_and_steps(choices[choice][1])
-        end = input("\nPlease enter (y or Y) to exit or (n or N) to try another reciepe: " )
-        if end.lower() == 'y':
+        end = input("\nPlease enter (n or N) to exit or (y or Y) to try another reciepe: " )
+        if end.lower() == 'n':
             exit()
         else:
             clear()
