@@ -34,6 +34,7 @@ if __name__ == '__main__':
             clear()
             continue
         else:
+            #added pdf
             pdf = FPDF()
             pdf.add_page()
             pdf.set_font("Arial", size=15)
