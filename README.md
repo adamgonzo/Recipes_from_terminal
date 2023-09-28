@@ -61,5 +61,3 @@ Possible enhancements:
 - Improve recipe formatting for printing
 - Add option to print/export recipe to PDF
 - Expand search options beyond single ingredient
-
-Let me know if any part of this markdown needs more detail or clarification!
