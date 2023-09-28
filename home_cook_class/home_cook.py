@@ -1,5 +1,6 @@
 from food_data_class.food import Food
 from clear import clear
+import textwrap
 
 class HomeCook:
 
@@ -14,11 +15,19 @@ class HomeCook:
     def grab_food_ingredients_and_steps(self, id_for_food):
         self.ingredients, self.steps = self.food.grab_food_ingredients(id_for_food)
         clear()
-        print("Ingredients List for {name}:".format(name=self.food.food_name))
-        for data in self.ingredients:
-            print('\t', '- ' + data)
+        f = open('recipe.txt', 'w')
 
-        print('\n\n' + "Step By Step Guide for {name}: ".format(name=self.food.food_name))
+        print("Ingredients List for {name}:".format(name=self.food.food_name) + '\n')
+        f.write("Ingredients List for {name}:".format(name=self.food.food_name) + '\n')
+        for data in self.ingredients:
+            string =  '- ' + data
+            print('\n'.join(textwrap.wrap(string, width=75, replace_whitespace=True)) + '\n')
+            f.write('\n'.join(textwrap.wrap(string, width=75, replace_whitespace=True)) + '\n')
+
+        print('\n\n' + "Step By Step Guide for {name}: ".format(name=self.food.food_name) + '\n')
+        f.write('\n\n' + "Step By Step Guide for {name}: ".format(name=self.food.food_name) + '\n')
         for data in self.steps:
-            print('\t', '- ' + data)
+            string =  '- ' + data
+            print('\n'.join(textwrap.wrap(string, width=75, replace_whitespace=True)) + '\n')
+            f.write('\n'.join(textwrap.wrap(string, width=75, replace_whitespace=True)) + '\n')
 
