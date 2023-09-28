@@ -59,5 +59,5 @@ Possible enhancements:
 
 - Add user accounts to save favorite recipes
 - Improve recipe formatting for printing
-- Add option to print/export recipe to PDF
+- ~~Add option to print/export recipe to PDF~~
 - Expand search options beyond single ingredient
