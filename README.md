@@ -1,5 +1,3 @@
-
-
 # Recipe App
 
 This is a simple recipe app that allows a user to search for recipes by ingredient. It uses the [Spoonacular API](https://spoonacular.com/food-api) to get recipe data.
@@ -15,7 +13,7 @@ Key methods:
 - `grab_food_data` - Searches for recipes by ingredient name
 - `grab_food_ingredients` - Gets ingredients and instructions for a specific recipe
 
-**home_cook.py** 
+**home_cook.py**
 
 Contains HomeCook class to manage recipe data and printing.
 
@@ -37,7 +35,6 @@ Key components:
 - Print recipe
 - Repeat or exit
 
-
 ## Setup
 
 The Spoonacular API key is hardcoded - this should be set as an environment variable or config for security.
@@ -45,7 +42,7 @@ The Spoonacular API key is hardcoded - this should be set as an environment vari
 Install dependencies:
 
 ```
-pip install requests
+pip install -r requirements.txt
 ```
 
 ## Usage
