@@ -16,17 +16,20 @@ if __name__ == '__main__':
         data_for_food = cook.food.grab_food_data()
         choices = {}
         counter = 1
+
         for key, value in data_for_food.items():
             choices[counter] = [key, value]
             counter += 1
+
         print("Here is the top 10 recipes for {name}:".format(name=name_of_food))
         for i, key in enumerate(data_for_food.keys()):
             print('\t', str(i+1) + ': ' + key)
 
         choice = int(input("Please enter choice 1-10: "))
         clear()
-        cook.grab_food_ingredients_and_steps(choices[choice][1])
+        cook.grab_food_ingredients_and_steps(choices[choice][1], choices[choice][0])
 
+        
         end = input("\nPlease enter (n or N) to exit or (y or Y) to try another reciepe or press (p or P) for pdf of reciepe: " )
         if end.lower() == 'n':
             exit()
