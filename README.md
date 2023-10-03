@@ -4,7 +4,7 @@ This is a simple recipe app that allows a user to search for recipes by ingredie
 
 ## Example
 
-![Example](https://github.com/adamgonzo/Recipes_from_terminal/assets/86032875/c0c6d92b-b1f9-4187-b133-930afb846a87)
+
 
 
 ## Files
