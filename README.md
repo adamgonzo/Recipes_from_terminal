@@ -2,6 +2,11 @@
 
 This is a simple recipe app that allows a user to search for recipes by ingredient. It uses the [Spoonacular API](https://spoonacular.com/food-api) to get recipe data.
 
+## Example
+
+![Example](https://github.com/adamgonzo/Recipes_from_terminal/assets/86032875/c0c6d92b-b1f9-4187-b133-930afb846a87)
+
+
 ## Files
 
 **food.py**
