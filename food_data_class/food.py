@@ -7,10 +7,11 @@ class Food:
     def grab_food_data(self) -> dict:
         import requests
 
-        response = requests.get(f"https://api.spoonacular.com/recipes/complexSearch?sort=popularity&query={self.food_name}&number=10&apiKey=b5c2d5a202dc422a8dfd5a5266a95843")
+        response = requests.get(f"https://api.spoonacular.com/recipes/complexSearch?sort=popularity&includeIngredients={self.food_name}&number=10&apiKey=b5c2d5a202dc422a8dfd5a5266a95843")
         data = response.json()['results']
         for j in range(len(data)):
-            self.food_data[data[j]['title']] = data[j]['id']
+            if 'title' in data[j] and 'id' in data[j]:
+                self.food_data[data[j]['title']] = data[j]['id']
 
         return self.food_data
 
@@ -22,15 +23,20 @@ class Food:
         response_for_food = requests.get(food_data_url)
         response_for_steps = requests.get(food_steps_url)
         food_data = response_for_food.json()
-        data_for_steps = response_for_steps.json()
-        steps_data = data_for_steps[0]['steps']
+
+
         ingredients = food_data['extendedIngredients']
         ingredients_for_food = []
-        steps_for_food = []
         for dat in ingredients:
             ingredients_for_food.append(dat['original'] + '\n')
-        total = 0
-        for j in range(len(steps_data)):
-            steps_for_food.append(steps_data[j]['step'])
+
+        data_for_steps = response_for_steps.json()
+        if len(data_for_steps) == 0:
+            steps_for_food = ["No instructions available for this recipe"]
+        else:
+            steps_data = data_for_steps[0]['steps']
+            steps_for_food = []
+            for j in range(len(steps_data)):
+                steps_for_food.append(steps_data[j]['step'])
 
         return ingredients_for_food, steps_for_food
